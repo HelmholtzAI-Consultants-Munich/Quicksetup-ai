@@ -1,5 +1,5 @@
-src
-===
+ml_pipeline_template
+====================
 
 .. toctree::
    :maxdepth: 4
