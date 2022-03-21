@@ -5,7 +5,7 @@ from pytorch_lightning import LightningModule
 from torchmetrics import MaxMetric
 from torchmetrics.classification.accuracy import Accuracy
 
-from src.models.components.simple_dense_net import SimpleDenseNet
+from ml_pipeline_template.models.components.simple_dense_net import SimpleDenseNet
 
 
 class MNISTLitModule(LightningModule):
