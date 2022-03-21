@@ -37,8 +37,8 @@ This template is a combination of [pyscaffold datascience](https://github.com/py
 │   └── train.yaml                              <- Main config for training
 │
 ├── data                                 <- Project data
-│   ├── processed                               <- Main config for testing
-│   └── raw                                     <- Main config for training
+│   ├── processed                               <- Processed data
+│   └── raw                                     <- Raw data
 │
 ├── docs                                 <- Directory for Sphinx documentation in rst or md.
 ├── models                               <- Trained and serialized models, model predictions
