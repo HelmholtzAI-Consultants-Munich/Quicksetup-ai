@@ -13,6 +13,6 @@
 source $HOME/.bashrc
 echo 'Starting script'
 
-conda activate sampleEnv
+conda activate ml_template_env
 
 python train.py

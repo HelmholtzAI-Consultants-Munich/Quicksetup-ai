@@ -1,7 +1,7 @@
-src
-===
+ml_pipeline_template
+====================
 
 .. toctree::
    :maxdepth: 4
 
-   src
+   ml_pipeline_template

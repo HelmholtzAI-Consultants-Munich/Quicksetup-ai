@@ -6,7 +6,7 @@ from omegaconf import DictConfig
 from pytorch_lightning import LightningDataModule, LightningModule, Trainer, seed_everything
 from pytorch_lightning.loggers import LightningLoggerBase
 
-from src import utils
+from ml_pipeline_template import utils
 
 log = utils.get_logger(__name__)
 

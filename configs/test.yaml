@@ -29,4 +29,4 @@ seed: null
 name: "default"
 
 # passing checkpoint path is necessary
-ckpt_path: /home/icb/erinc.merdivan/ML-Pipeline-Template/logs/experiments/runs/default/2022-03-15_15-04-56/checkpoints/epoch_000.ckpt
+ckpt_path: logs/experiments/runs/default/2022-03-21_04-40-51/checkpoints/last.ckpt
