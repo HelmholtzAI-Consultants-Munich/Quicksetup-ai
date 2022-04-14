@@ -148,3 +148,6 @@ wandb/
 .autoenv
 
 .DS_Store
+
+#mlflow output
+mlruns
