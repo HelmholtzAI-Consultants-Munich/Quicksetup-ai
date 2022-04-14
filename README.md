@@ -12,14 +12,14 @@
 
 </div>
 
-## Description
+# Description
 
 This template is a combination of [pyscaffold datascience](https://github.com/pyscaffold/pyscaffoldext-dsproject) and [lightning-hydra](https://github.com/ashleve/lightning-hydra-template). It provides a general baseline for Deep Learning projects including: 
 * A predefined structure which simplifies the development of the project.
 * A set of tools for experiment tracking, hyper parameter search and rapid experimentation using configuration files. More details in [lightning-hydra](https://github.com/ashleve/lightning-hydra-template).
 * Pre-commit hooks and automatic documentation generation.
 
-## Project Organization
+# Project Organization
 ```
 ├── configs                              <- Hydra configuration files
 │   ├── callbacks                               <- Callbacks configs
@@ -77,51 +77,38 @@ This template is a combination of [pyscaffold datascience](https://github.com/py
 │                                           development or `python setup.py bdist_wheel` to build.
 └── README.md
 ```
-
-## How to run
-
-Install dependencies
-
-```bash
-# clone project
-git clone https://github.com/YourGithubName/your-repo-name
-cd your-repo-name
-
-# [OPTIONAL] create conda environment
-conda create -n ml_template_env python=3.7
-conda activate ml_template_env
-
-# install pytorch according to instructions
-# https://pytorch.org/get-started/
-
-# install requirements
+# Quickstart
+## Create the pipeline environment
+The libraries used by the pipeline are all listed in `requirements.txt`. 
+* First, create a virtual environment (for the sake of the example, we'll call it `ml_template_env`). 
+> You can either do it with conda (preferred) or venv.
+* Then, activate the environment
+* Finally, install all dependencies using `pip`. Run:
+```
 pip install -r requirements.txt
+ ```
+
+## Install the ml-pipeline-template package
+Before using the template, one needs to install the project as a package. Run:
 ```
-
-Train model with default configuration
-
-```bash
-cd scripts
-
-# train on CPU
-python train.py trainer.gpus=0
-
-# train on GPU
-python train.py trainer.gpus=1
+pip install -e .
 ```
-
-Train model with chosen experiment configuration from [configs/experiment/](configs/experiment/)
-
-```bash
-cd scripts
-
-python train.py experiment=experiment_name.yaml
+## Run the MNIST example
+This pipeline comes with a toy example (MNIST dataset with a simple feedforward neural network). To run the training (resp. testing) pipeline, simply run:
 ```
-
-You can override any parameter from command line like this
-
-```bash
-cd scripts
-
-python train.py trainer.max_epochs=20 datamodule.batch_size=64
+python scripts/train.py
+# or python scripts/test.py
 ```
+Or, if you want to submit the training job to a submit (resp. interactive) cluster node via slurm, run:
+```
+sbatch job_submission.sbatch
+# or sbatch job_submission_interactive.sbatch
+```
+> * The experiments, evaluations, etc., are stored under the `logs` directory.
+> * The default experiments tracking system is mlflow. The `mlruns` directory is contained in `logs`. To view a user friendly view of the experiments, run:
+> ```
+> # make sure you are inside logs (where mlruns is located)
+> mlflow ui --host 0000
+> ```
+> * When evaluating (running `test.py`), make sure you give the correct checkpoint path in `configs/test.yaml`
+## Adapt the template
