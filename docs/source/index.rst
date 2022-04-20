@@ -3,19 +3,33 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to ML-Template-Pipeline's documentation!
+
+MLPT: ML-Pipeline-Template's documentation!
 ================================
+We are currently coding something special...
+This is a work in-progress.
+
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: GETTING STARTED
 
-   modules
+   notes/installation.md
+   notes/quickstart.md
+   notes/tutorials.md
 
 
-Indices and tables
-==================
+.. toctree::
+   :maxdepth: 2
+   :caption: REFERENCE DOCUMENTATION
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   notes/config.md
+   notes/easy_experiment.md
+   notes/experiment_tracking.md
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: FAQ
+
+   notes/faq.md
