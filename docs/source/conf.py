@@ -40,6 +40,7 @@ extensions = [
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
     "myst_parser",
+    "sphinx_copybutton"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -66,8 +67,10 @@ exclude_patterns = []
 html_theme = "sphinx_book_theme"
 html_logo = "_static/dog.png"
 html_favicon = "_static/dog.png"
+
+html_title = "MLPT"
 html_theme_options = {
-    "logo_only": True,
+    "logo_only": False,
     "repository_url": "https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template",
     "use_repository_button": True,
     "use_fullscreen_button": True,
