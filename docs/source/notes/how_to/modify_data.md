@@ -1,5 +1,5 @@
 # How to set up a different dataset
-In this Tutorial, we show how one can quickly edit the template to use another dataset. In this example, the new dataset is CIFAR100.
+In this Tutorial, we show how one can quickly edit the template to use another dataset. In this example, the new dataset is CIFAR10.
 
 ## Create a new DataModule
 Under `src/ml_pipeline_template/datamodules/`, we create a new file called `cifar_10_datamodule.py` with the content of `mnist_datamodule.py`. Then, we edit the necessary parts, namely in `prepare_data`, we download the CIFAR10 dataset instead of MNIST. We also modify the default splits and transforms.
