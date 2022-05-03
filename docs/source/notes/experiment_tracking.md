@@ -1,3 +1,0 @@
-# Experiment tracking
-
-Easy experiment tracking using different experiment trackers such as Tensorboard, MLFlow...
