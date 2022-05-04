@@ -27,7 +27,7 @@ This is a work in-progress.
 
    notes/how_to/modify_model.md
    notes/how_to/modify_data.md
-   notes/how_to/use_monai.md
+   notes/how_to/use_monai.ipynb
 
 
 .. toctree::
