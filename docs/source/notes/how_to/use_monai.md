@@ -6,7 +6,8 @@ MedNIST classification using MONAI and MLPT
 ```bash
 pip install monai
 ```
-2. Create your own project using this template (MLPT) via cookiecutter:
+2. Create your own project using this template (MLPT) via cookiecutter
+(skip if project has already been created via cookiecutter installation step):
 ```bash
 pip install cookiecutter
 cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template.git

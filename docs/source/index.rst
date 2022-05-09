@@ -4,16 +4,13 @@
    contain the root `toctree` directive.
 
 MLPT: Machine Learning Pipeline Template's documentation!
-================================
-We are currently coding something special...
-This is a work in-progress.
-
+=======================================================================================================================
 
 .. include:: notes/getting_started/intro.md
    :parser: myst_parser.sphinx_
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: GETTING STARTED
 
    notes/getting_started/installation.md
@@ -22,16 +19,10 @@ This is a work in-progress.
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: TUTORIALS
 
    notes/how_to/modify_model.md
    notes/how_to/modify_data.md
    notes/how_to/use_monai.ipynb
 
-
-.. toctree::
-   :maxdepth: 2
-   :caption: FAQ
-
-   notes/faq.md

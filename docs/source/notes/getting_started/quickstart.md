@@ -1,7 +1,7 @@
 # Quickstart
-## TLDR
+## TL;DR
 ```bash
-# git clone https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template.git
+# given that project_name is `ML-Pipeline-Template` via cookiecutter installation step
 cd ML-Pipeline-Template/
 conda create -n venv python=3.9
 conda activate venv

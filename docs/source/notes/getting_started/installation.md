@@ -1,16 +1,23 @@
 # Installation
 
-## Using git
+### TL;DR:
 ```bash
-git clone https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template.git
+conda create -n -y venv_cookie python=3.9 && conda activate venv_cookie
+pip install cookiecutter
+cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template.git
 ```
-
-## Using GitHub
-1. Go to this page [https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template/generate](https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template/generate)
-2. Login using your GitHub account.
-3. Enter a `Repository Name`. Then select if you want to make the repo public or private. Wait a few seconds... :tada: You now have the same project repo as MLPT and ready to build the next best model.
 
 ## Using Cookiecutter
+1. Create and activate your environment:
+```bash
+conda create -n -y venv_cookie python=3.9 && conda activate venv_cookie
 ```
-# WIP
+
+2. Install cookiecutter in your environment:
+```bash
+pip install cookiecutter
+```
+2. Create your own project using this template via cookiecutter:
+```bash
+cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template.git
 ```
