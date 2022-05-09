@@ -1,8 +1,0 @@
-_target_: ml_pipeline_template.datamodules.classification.ClassificationTaskDataModule
-
-# Any argument in the `ClassificationTaskDataModule` can be modified using this file
-data_dir: ${data_dir}
-num_classes: 6
-batch_size: 256
-num_workers: 0
-pin_memory: False
