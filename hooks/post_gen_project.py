@@ -18,6 +18,7 @@ def delete_license_dir():
 
 
 if __name__ == "__main__":
+    delete_license_dir()
     git_init()
     git_commit()
-    delete_license_dir()
+
