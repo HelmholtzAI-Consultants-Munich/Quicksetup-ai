@@ -3,15 +3,15 @@ MedNIST classification using MONAI and MLPT
 
 ## MONAI and MLPT
 1. Install [MONAI](https://docs.monai.io/en/stable/installation.html) in your environment:
-```bash
-pip install monai
-```
+   ```bash
+   pip install monai
+   ```
 2. Create your own project using this template (MLPT) via cookiecutter
 (skip if project has already been created via cookiecutter installation step):
-```bash
-pip install cookiecutter
-cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template.git
-```
+   ```bash
+   pip install cookiecutter
+   cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template.git
+   ```
 Check the [installation page](https://ml-pipeline-template.readthedocs.io/en/latest/notes/getting_started/installation.html) if you are having issues creating a project using this template via
 cookiecutter.
 
