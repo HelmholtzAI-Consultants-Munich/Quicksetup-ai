@@ -9,6 +9,11 @@
 <a href="https://github.com/ashleve/lightning-hydra-template"><img alt="Template" src="https://img.shields.io/badge/-Lightning--Hydra--Template-017F2F?style=flat&logo=github&labelColor=gray"></a>
 <a href="https://github.com/pyscaffold/pyscaffoldext-dsproject"><img alt="Template" src="https://img.shields.io/badge/-Pyscaffold--Datascience-017F2F?style=flat&logo=github&labelColor=gray"></a>
 
+[Docs] | [Quickstart] | [Tutorials] |
+
+[Docs]: https://ml-pipeline-template.readthedocs.io/en/latest/
+[Quickstart]: https://ml-pipeline-template.readthedocs.io/en/latest/notes/getting_started/quickstart.html
+[Tutorials]: https://ml-pipeline-template.readthedocs.io/en/latest/index.html#:~:text=TUTORIALS-,How%20to%20set%20up%20a%20different%20model,-Define%20the%20new
 
 </div>
 
