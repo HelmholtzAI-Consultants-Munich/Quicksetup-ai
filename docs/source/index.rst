@@ -3,19 +3,26 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to ML-Template-Pipeline's documentation!
-================================
+MLPT: Machine Learning Pipeline Template's documentation!
+=======================================================================================================================
+
+.. include:: notes/getting_started/intro.md
+   :parser: myst_parser.sphinx_
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+   :caption: GETTING STARTED
 
-   modules
+   notes/getting_started/installation.md
+   notes/getting_started/quickstart.md
+   notes/getting_started/project_structure.md
 
 
-Indices and tables
-==================
+.. toctree::
+   :maxdepth: 1
+   :caption: TUTORIALS
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   notes/how_to/modify_model.md
+   notes/how_to/modify_data.md
+   notes/how_to/use_monai.ipynb
+

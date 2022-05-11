@@ -2,48 +2,22 @@
 
 <div align="center">
 
-# Machine Learning Pipeline Template
+# {{cookiecutter.project_name}}
 <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
 <a href="https://pytorchlightning.ai/"><img alt="Lightning" src="https://img.shields.io/badge/-Lightning-792ee5?logo=pytorchlightning&logoColor=white"></a>
 <a href="https://hydra.cc/"><img alt="Config: Hydra" src="https://img.shields.io/badge/Config-Hydra-89b8cd"></a>
-<a href="https://github.com/ashleve/lightning-hydra-template"><img alt="Template" src="https://img.shields.io/badge/-Lightning--Hydra--Template-017F2F?style=flat&logo=github&labelColor=gray"></a>
+<a href="https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template"><img alt="Template" src="https://img.shields.io/badge/-Lightning--Hydra--Template-017F2F?style=flat&logo=github&labelColor=gray"></a>
 <a href="https://github.com/pyscaffold/pyscaffoldext-dsproject"><img alt="Template" src="https://img.shields.io/badge/-Pyscaffold--Datascience-017F2F?style=flat&logo=github&labelColor=gray"></a>
-
-[Docs] | [Quickstart] | [Tutorials] |
-
-[Docs]: https://ml-pipeline-template.readthedocs.io/en/latest/
-[Quickstart]: https://ml-pipeline-template.readthedocs.io/en/latest/notes/getting_started/quickstart.html
-[Tutorials]: https://ml-pipeline-template.readthedocs.io/en/latest/index.html#:~:text=TUTORIALS-,How%20to%20set%20up%20a%20different%20model,-Define%20the%20new
 
 </div>
 
 # Description
+{{cookiecutter.project_short_description}}
 
-This template is a combination of [pyscaffold datascience](https://github.com/pyscaffold/pyscaffoldext-dsproject) and [lightning-hydra](https://github.com/ashleve/lightning-hydra-template). It provides a general baseline for Deep Learning projects including: 
-* A predefined structure which simplifies the development of the project.
-* A set of tools for experiment tracking, hyper parameter search and rapid experimentation using configuration files. More details in [lightning-hydra](https://github.com/ashleve/lightning-hydra-template).
-* Pre-commit hooks and automatic documentation generation.
-
-# Installation
-## Using Cookiecutter
-1. Create and activate your environment:
-    ```bash
-    conda create -n -y venv_cookie python=3.9 && conda activate venv_cookie
-    ```
-
-2. Install cookiecutter in your environment:
-    ```bash
-    pip install cookiecutter
-    ```
-3. Create your own project using this template via cookiecutter:
-    ```bash
-    cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template.git
-    ```
-   
 # Quickstart
 ## Create the pipeline environment
-The libraries used by the pipeline are all listed in `requirements.txt`. 
-* First, create a virtual environment (for the sake of the example, we'll call it `ml_template_env`). 
+The libraries used by the pipeline are all listed in `requirements.txt`.
+* First, create a virtual environment (for the sake of the example, we'll call it `ml_template_env`).
 > You can either do it with conda (preferred) or venv.
 * Then, activate the environment
 * Finally, install all dependencies using `pip`. Run:
@@ -51,7 +25,7 @@ The libraries used by the pipeline are all listed in `requirements.txt`.
 pip install -r requirements.txt
  ```
 
-## Install the ml-pipeline-template package
+## Install the {{cookiecutter.project_slug}} package
 Before using the template, one needs to install the project as a package. Run:
 ```
 pip install -e .
@@ -94,8 +68,9 @@ sbatch job_submission.sbatch
 │   └── train.yaml                              <- Main config for training
 │
 ├── data                                 <- Project data
-│   ├── processed                               <- Processed data
-│   └── raw                                     <- Raw data
+│   └── MNIST
+│       ├── processed                               <- Processed data
+│       └── raw                                     <- Raw data
 │
 ├── docs                                 <- Directory for Sphinx documentation in rst or md.
 ├── models                               <- Trained and serialized models, model predictions
@@ -108,20 +83,19 @@ sbatch job_submission.sbatch
 │   ├── test.py                             <- Run testing
 │   └── train.py                            <- Run training
 │
-├── src/ml_pipeline_template             <- Source code
+├── src/{{cookiecutter.project_slug}}             <- Source code
 │   ├── datamodules                             <- Lightning datamodules
 │   ├── models                                  <- Lightning models
 │   ├── utils                                   <- Utility scripts
 │   │
-│   ├── testing_pipeline.py
-│   └── training_pipeline.py
+│   ├── testing_pipeline.py                     <- Model evaluation workflow
+│   └── training_pipeline.py                    <- Model training workflow
 │
 ├── tests                                <- Tests of any kind
 │   ├── helpers                                 <- A couple of testing utilities
 │   ├── shell                                   <- Shell/command based tests
 │   └── unit                                    <- Unit tests
 │
-├── .coveragerc                          <- Configuration for coverage reports of unit tests.
 ├── .gitignore                           <- List of files/folders ignored by git
 ├── .pre-commit-config.yaml              <- Configuration of pre-commit hooks for code formatting
 ├── requirements.txt                     <- File for installing python dependencies
