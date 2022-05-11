@@ -19,6 +19,58 @@ This template is a combination of [pyscaffold datascience](https://github.com/py
 * A set of tools for experiment tracking, hyper parameter search and rapid experimentation using configuration files. More details in [lightning-hydra](https://github.com/ashleve/lightning-hydra-template).
 * Pre-commit hooks and automatic documentation generation.
 
+# Installation
+## Using Cookiecutter
+1. Create and activate your environment:
+    ```bash
+    conda create -n -y venv_cookie python=3.9 && conda activate venv_cookie
+    ```
+
+2. Install cookiecutter in your environment:
+    ```bash
+    pip install cookiecutter
+    ```
+3. Create your own project using this template via cookiecutter:
+    ```bash
+    cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template.git
+    ```
+   
+# Quickstart
+## Create the pipeline environment
+The libraries used by the pipeline are all listed in `requirements.txt`. 
+* First, create a virtual environment (for the sake of the example, we'll call it `ml_template_env`). 
+> You can either do it with conda (preferred) or venv.
+* Then, activate the environment
+* Finally, install all dependencies using `pip`. Run:
+```
+pip install -r requirements.txt
+ ```
+
+## Install the ml-pipeline-template package
+Before using the template, one needs to install the project as a package. Run:
+```
+pip install -e .
+```
+## Run the MNIST example
+This pipeline comes with a toy example (MNIST dataset with a simple feedforward neural network). To run the training (resp. testing) pipeline, simply run:
+```
+python scripts/train.py
+# or python scripts/test.py
+```
+Or, if you want to submit the training job to a submit (resp. interactive) cluster node via slurm, run:
+```
+sbatch job_submission.sbatch
+# or sbatch job_submission_interactive.sbatch
+```
+> * The experiments, evaluations, etc., are stored under the `logs` directory.
+> * The default experiments tracking system is mlflow. The `mlruns` directory is contained in `logs`. To view a user friendly view of the experiments, run:
+> ```
+> # make sure you are inside logs (where mlruns is located)
+> mlflow ui --host 0000
+> ```
+> * When evaluating (running `test.py`), make sure you give the correct checkpoint path in `configs/test.yaml`
+
+
 # Project Organization
 ```
 ├── configs                              <- Hydra configuration files
@@ -77,38 +129,3 @@ This template is a combination of [pyscaffold datascience](https://github.com/py
 │                                           development or `python setup.py bdist_wheel` to build.
 └── README.md
 ```
-# Quickstart
-## Create the pipeline environment
-The libraries used by the pipeline are all listed in `requirements.txt`. 
-* First, create a virtual environment (for the sake of the example, we'll call it `ml_template_env`). 
-> You can either do it with conda (preferred) or venv.
-* Then, activate the environment
-* Finally, install all dependencies using `pip`. Run:
-```
-pip install -r requirements.txt
- ```
-
-## Install the ml-pipeline-template package
-Before using the template, one needs to install the project as a package. Run:
-```
-pip install -e .
-```
-## Run the MNIST example
-This pipeline comes with a toy example (MNIST dataset with a simple feedforward neural network). To run the training (resp. testing) pipeline, simply run:
-```
-python scripts/train.py
-# or python scripts/test.py
-```
-Or, if you want to submit the training job to a submit (resp. interactive) cluster node via slurm, run:
-```
-sbatch job_submission.sbatch
-# or sbatch job_submission_interactive.sbatch
-```
-> * The experiments, evaluations, etc., are stored under the `logs` directory.
-> * The default experiments tracking system is mlflow. The `mlruns` directory is contained in `logs`. To view a user friendly view of the experiments, run:
-> ```
-> # make sure you are inside logs (where mlruns is located)
-> mlflow ui --host 0000
-> ```
-> * When evaluating (running `test.py`), make sure you give the correct checkpoint path in `configs/test.yaml`
-## Adapt the template
