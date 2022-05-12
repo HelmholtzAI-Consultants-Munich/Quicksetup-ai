@@ -1,4 +1,62 @@
 {
-  "using_optional_feature": ["no", "yes"],
-  "{% if cookiecutter.using_optional_feature == 'yes' %} conditional_prompt {% else %} _don't_prompt {% endif %}": "value"
+  "project_short_description": "This project is the next SOTA model in ML.",
+  "version": "0.1.0",
+  
+  "variables": [
+      {
+          "name": "use_defaults",
+          "default": true,
+          "prompt": "Do you want to use defaults",
+          "description": "Would you like to use the default parameters",
+          "type": "yes_no"
+      },
+      {
+          "name": "author_name",
+          "default": "Firstname Lastname",
+          "prompt": "What's your full name?",
+          "description": "Please enter your full name. It will be displayed on the README file and used for the PyPI package definition.",
+          "type": "string",
+          "skip_if": "{{cookiecutter.use_defaults == True}}"
+      },
+      {
+          "name": "email",
+          "default": "firstname.lastname@hmgu.de",
+          "prompt": "What's your email?",
+          "description": "Please enter an email address for the meta information in setup.py.",
+          "type": "string",
+          "skip_if": "{{cookiecutter.use_defaults == True}}"
+      },
+      {
+          "name": "project_name",
+          "default": "ML-Pipeline-Template",
+          "prompt": "What should be the name for your project?",
+          "description": "Please enter a name for your project. We will prepend the name with 'pytest-'",
+          "type": "string",
+          "skip_if": "{{cookiecutter.use_defaults == True}}"
+      },
+      {
+          "name": "project_slug",
+          "default": "{{cookiecutter.project_name|lower|replace('-','_')}}",
+          "prompt": "Please enter a name for your base python module",
+          "type": "string",
+          "validation": "^[a-z_]+$",
+          "skip_if": "{{cookiecutter.use_defaults == True}}"
+      },
+      {
+          "name": "license",
+          "default": "MIT",
+          "prompt": "Please choose a license!",
+          "description": "Cookiecutter will add an according LICENSE file for you and set the according classifier in setup.py.",
+          "type": "string",
+          "choices": [
+              "MIT",
+              "BSD-3",
+              "GNU GPL v3.0",
+              "Apache Software License 2.0",
+              "Mozilla Public License 2.0"
+          ],
+          "skip_if": "{{cookiecutter.use_defaults == True}}"
+      }
+
+  ]
 }
