@@ -1,43 +1,47 @@
 {
+  "name": "cookiecutter-pytest-plugin",
+  "version": "0.1.0",
+  "description": "a cookiecutter to create pytest plugins with ease.",
+  "authors": [
+      "Raphael Pierzina <raphael@hackebrot.de>",
+      "Audrey Roy Greenfeld <aroy@alum.mit.edu>"
+  ],
+  "cookiecutter_version": "2.0.0",
+  "license": "MIT",
+  "keywords": [
+      "pytest",
+      "python",
+      "plugin"
+  ],
+  "url": "https://github.com/pytest-dev/cookiecutter-pytest-plugin",
   "variables": [
       {
-          "name": "blabla",
-          "default": true,
-          "prompt": "Do you want to use defaults",
-          "description": "Would you like to use the default parameters",
-          "type": "yes_no"
-      },
-      {
-          "name": "author_name",
-          "default": "Firstname Lastname",
+          "name": "full_name",
+          "default": "Raphael Pierzina",
           "prompt": "What's your full name?",
           "description": "Please enter your full name. It will be displayed on the README file and used for the PyPI package definition.",
-          "type": "string",
-          "skip_if": "{{cookiecutter.blabla == True}}"
+          "type": "string"
       },
       {
           "name": "email",
-          "default": "firstname.lastname@hmgu.de",
+          "default": "raphael@hackebrot.de",
           "prompt": "What's your email?",
           "description": "Please enter an email address for the meta information in setup.py.",
-          "type": "string",
-          "skip_if": "{{cookiecutter.use_defaults == True}}"
+          "type": "string"
       },
       {
-          "name": "project_name",
-          "default": "LOL",
-          "prompt": "What should be the name for your project?",
-          "description": "Please enter a name for your project. We will prepend the name with 'pytest-'",
-          "type": "string",
-          "skip_if": "{{cookiecutter.use_defaults == True}}"
+          "name": "plugin_name",
+          "default": "emoji",
+          "prompt": "What should be the name for your plugin?",
+          "description": "Please enter a name for your plugin. We will prepend the name with 'pytest-'",
+          "type": "string"
       },
       {
-          "name": "project_slug",
-          "default": "{{cookiecutter.project_name|lower|replace('-','_')}}",
+          "name": "module_name",
+          "default": "{{cookiecutter.plugin_name|lower|replace('-','_')}}",
           "prompt": "Please enter a name for your base python module",
           "type": "string",
-          "validation": "^[a-z_]+$",
-          "skip_if": "{{cookiecutter.use_defaults == True}}"
+          "validation": "^[a-z_]+$"
       },
       {
           "name": "license",
@@ -51,9 +55,48 @@
               "GNU GPL v3.0",
               "Apache Software License 2.0",
               "Mozilla Public License 2.0"
+          ]
+      },
+      {
+          "name": "docs",
+          "default": true,
+          "prompt": "Do you want to generate a base for docs?",
+          "description": "Would you like to generate documentation for your plugin? You will be able to choose from a number of generators.",
+          "type": "yes_no"
+      },
+      {
+          "name": "docs_tool",
+          "default": "mkdocs",
+          "prompt": "Which tool do you want to choose for generating docs?",
+          "description": "There are a number of options for documentation generators. Please choose one. We will create a separate folder for you",
+          "type": "string",
+          "choices": [
+              "mkdocs",
+              "sphinx"
           ],
-          "skip_if": "{{cookiecutter.use_defaults == True}}"
+          "skip_if": "{{cookiecutter.docs == False}}"
+      },
+      {
+          "name": "year",
+          "default": "{% now 'utc', '%Y' %}",
+          "prompt_user": false,
+          "type": "string"
+      },
+      {
+          "name": "fixtures",
+          "default": {
+              "foo": {
+                  "scope": "session",
+                  "autouse": true
+              },
+              "bar": {
+                  "scope": "function",
+                  "autouse": false
+              }
+          },
+          "description": "Please enter a valid JSON string to set up fixtures for your plugin.",
+          "prompt_user": true,
+          "type": "json"
       }
-
   ]
 }
