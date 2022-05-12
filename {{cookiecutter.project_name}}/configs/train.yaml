@@ -34,10 +34,12 @@ defaults:
 original_work_dir: ${hydra:runtime.cwd}
 
 # path to folder with data
-data_dir: ${original_work_dir}/data/
 {% if cookiecutter.use_dvc == 'yes' -%}
-data_repo:
-data_version: 
+data_dir: data/
+data_repo: ${original_work_dir}
+data_version: 'v1'
+{% elif cookiecutter.use_dvc == "no" %}
+data_dir: ${original_work_dir}/data/
 {% endif %}
 
 # pretty print config at the start of the run using Rich library
