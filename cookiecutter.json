@@ -1,10 +1,7 @@
 {
-  "project_short_description": "This project is the next SOTA model in ML.",
-  "version": "0.1.0",
-  
   "variables": [
       {
-          "name": "use_defaults",
+          "name": "blabla",
           "default": true,
           "prompt": "Do you want to use defaults",
           "description": "Would you like to use the default parameters",
