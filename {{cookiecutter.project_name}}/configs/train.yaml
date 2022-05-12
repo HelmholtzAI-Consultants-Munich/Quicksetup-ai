@@ -6,7 +6,7 @@ defaults:
   - datamodule: mnist.yaml
   - model: mnist.yaml
   - callbacks: default.yaml
-  - logger: mlflow.yaml # set logger here or use command line (e.g. `python train.py logger=tensorboard`)
+  - logger: {{cookiecutter.default_logger}}.yaml # set logger here or use command line (e.g. `python train.py logger=tensorboard`)
   - trainer: default.yaml
   - log_dir: default.yaml
 
