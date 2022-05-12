@@ -2,11 +2,11 @@
   "author_name": "Firstname Lastname",
   "email": "firstname.lastname@hmgu.de",
   "github_username": "username",
-  "project_name": "ML-Pipeline-Template",
+  "project_name": "LOL",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "This project is the next SOTA model in ML.",
   "version": "0.1.0",
   "open_source_license": ["MIT", "BSD-3", "GNU GPL v3.0", "Apache Software License 2.0"],
-  "default_logger": ["comet", "csv", "mlflow", "neptune", "tensorboard", "wandb"],
+  "default_logger": ["mlflow", "tensorboard", "wandb", "csv", "neptune", "comet"],
   "use_dvc": ["yes", "no"]
 }
