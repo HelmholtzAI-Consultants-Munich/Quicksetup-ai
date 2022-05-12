@@ -8,6 +8,8 @@ import rich.tree
 from omegaconf import DictConfig, OmegaConf
 from pytorch_lightning.utilities import rank_zero_only
 
+import dvc.api
+
 
 def get_logger(name=__name__) -> logging.Logger:
     """Initializes multi-GPU-friendly python command line logger."""
@@ -137,6 +139,14 @@ def log_hyperparameters(
         hparams["seed"] = config["seed"]
     if "callbacks" in config:
         hparams["callbacks"] = config["callbacks"]
+    
+
+    if "{{cookiecutter.use_dvc}}" == "yes":
+        # hparams["data_dir"] = config["data_dir"]
+        # hparams["data_repo"] = config["data_repo"]
+        # hparams["data_version"] = config["data_version"]
+
+        hparams["data_url"] = dvc.api.get_url(path=config["data_dir"], repo=config["data_repo"], rev=config["data_version"])
 
     # send hparams to all loggers
     trainer.logger.log_hyperparams(hparams)
