@@ -26,6 +26,6 @@ if __name__ == "__main__":
     delete_license_dir()
     git_init()
     git_commit()
-    if {{cookiecutter.use_dvc}} == "yes":
+    if "{{cookiecutter.use_dvc}}" == "yes":
         dvc_init()
 
