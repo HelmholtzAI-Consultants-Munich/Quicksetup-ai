@@ -28,7 +28,7 @@
       },
       {
           "name": "project_name",
-          "default": "ML-Pipeline-Template",
+          "default": "LOL",
           "prompt": "What should be the name for your project?",
           "description": "Please enter a name for your project. We will prepend the name with 'pytest-'",
           "type": "string",
