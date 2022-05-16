@@ -9,7 +9,7 @@ def git_init():
 def dvc_init():
     print("Initializing dvc")
     subprocess.run(["dvc", "init"])
-    subprocess.run(["git", "commit", "-m", "build: initialize DVC"])
+    subprocess.run(["git", "commit", "-mq", "build: initialize DVC"])
 
 
 def git_commit():
