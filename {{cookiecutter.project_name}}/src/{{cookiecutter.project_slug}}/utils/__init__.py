@@ -146,7 +146,8 @@ def log_hyperparameters(
         # hparams["data_repo"] = config["data_repo"]
         # hparams["data_version"] = config["data_version"]
 
-        hparams["data_url"] = dvc.api.get_url(path=config["data_dir"], repo=config["data_repo"], rev=config["data_version"])
+        # hparams["data_url"] = dvc.api.get_url(path=config["data_dir"], repo=config["data_repo"], rev=config["data_version"])
+        hparams["data_version"] = config["data_version"]
 
     # send hparams to all loggers
     trainer.logger.log_hyperparams(hparams)

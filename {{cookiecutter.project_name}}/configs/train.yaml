@@ -35,8 +35,7 @@ original_work_dir: ${hydra:runtime.cwd}
 
 # path to folder with data
 {% if cookiecutter.use_dvc == 'yes' -%}
-data_dir: data/
-data_repo: ${original_work_dir}
+data_dir: ${original_work_dir}/data/
 data_version: 'v1'
 {% elif cookiecutter.use_dvc == "no" %}
 data_dir: ${original_work_dir}/data/
