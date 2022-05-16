@@ -6,7 +6,7 @@ defaults:
   - datamodule: mnist.yaml
   - model: mnist.yaml
   - callbacks: default.yaml
-  - logger: mlflow.yaml # set logger here or use command line (e.g. `python train.py logger=tensorboard`)
+  - logger: {{cookiecutter.default_logger}}.yaml # set logger here or use command line (e.g. `python train.py logger=tensorboard`)
   - trainer: default.yaml
   - log_dir: default.yaml
 
@@ -34,7 +34,12 @@ defaults:
 original_work_dir: ${hydra:runtime.cwd}
 
 # path to folder with data
+{% if cookiecutter.use_dvc == 'yes' -%}
 data_dir: ${original_work_dir}/data/
+data_version: 'v1'
+{% elif cookiecutter.use_dvc == "no" %}
+data_dir: ${original_work_dir}/data/
+{% endif %}
 
 # pretty print config at the start of the run using Rich library
 print_config: True
