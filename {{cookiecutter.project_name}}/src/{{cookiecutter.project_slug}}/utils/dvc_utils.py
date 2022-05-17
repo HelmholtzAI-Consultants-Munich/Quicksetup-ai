@@ -1,28 +1,34 @@
 import subprocess
 import yaml
+import os
 
 def save_initial_data():
     version_name = 'v1'
     data_path = input('Data path:')
     print("Saving initial data")
-    subprocess.run(["dvc", "add", "data_path"])
-    subprocess.run(["git", "add", ".gitignore", data_path + ".dvc"])
-    subprocess.run(["git", "commit", "-m", "data: Save initial data"])
-    subprocess.run(["git", "tag", '-a', "'" + version_name + "'", '-m', 'data: Save initial data' ])
-    subprocess.run(["dvc", "push"])
+    if os.path.exists(data_path):
+        subprocess.run(["dvc", "add", data_path])
+        subprocess.run(["git", "add", ".gitignore", data_path + ".dvc"])
+        subprocess.run(["git", "commit", "-m", "data: Save initial data"])
+        subprocess.run(["git", "tag", '-a', "'" + version_name + "'", '-m', 'data: Save initial data' ])
+        subprocess.run(["dvc", "push"])
+    else:
+        print("Invalid data path: ", data_path)
 
 
 def save_data_version():
     version_name = input('Version name:')
     data_path = input('Data path:')
     print("Saving data version: ", version_name)
-    subprocess.run(["dvc", "commit", "data_path"])
-    subprocess.run(["git", "add", ".gitignore", data_path + ".dvc"])
-    subprocess.run(["git", "commit", "-m", "data: Create data version: " + version_name])
-    subprocess.run(["git", "tag", '-a', "'" + version_name + "'", '-m', "data: Create data version: " + version_name])
-    subprocess.run(["dvc", "push"])
-    change_yaml_entry("data_version", version_name, "configs/train.yaml")
-
+    if os.path.exists(data_path):
+        subprocess.run(["dvc", "commit", data_path])
+        subprocess.run(["git", "add", ".gitignore", data_path + ".dvc"])
+        subprocess.run(["git", "commit", "-m", "data: Create data version: " + version_name])
+        subprocess.run(["git", "tag", '-a', "'" + version_name + "'", '-m', "data: Create data version: " + version_name])
+        subprocess.run(["dvc", "push"])
+        change_yaml_entry("data_version", version_name, "configs/train.yaml")
+    else:
+        print("Invalid data path: ", data_path)
 
 def switch_to_data_version():
     version_name = input('Version name:')
