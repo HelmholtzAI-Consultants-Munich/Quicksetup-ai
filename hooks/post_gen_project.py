@@ -3,7 +3,7 @@ import subprocess
 
 def git_init():
     print("Initializing git")
-    subprocess.run(["git", "init", "-b", "main"])
+    subprocess.run(["git", "init"])
 
 
 def dvc_init():
@@ -17,6 +17,7 @@ def git_commit():
     subprocess.run(["git", "add", "-A"])
     print("Committing files")
     subprocess.run(["git", "commit", "-aqm", "buid: add initial files"])
+    subprocess.run(["git", "branch", "-m", "main"])
 
 
 def delete_license_dir():
@@ -29,4 +30,3 @@ if __name__ == "__main__":
     git_commit()
     if "{{cookiecutter.use_dvc}}" == "yes":
         dvc_init()
-
