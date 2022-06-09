@@ -28,7 +28,7 @@ This template is a combination of [pyscaffold datascience](https://github.com/py
 ## Using Cookiecutter
 1. Create and activate your environment:
     ```bash
-    conda create -n -y venv_cookie python=3.9 && conda activate venv_cookie
+    conda create -y -n venv_cookie python=3.9 && conda activate venv_cookie
     ```
 
 2. Install cookiecutter in your environment:
