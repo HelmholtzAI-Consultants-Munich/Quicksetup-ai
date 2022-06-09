@@ -8,8 +8,6 @@ import rich.tree
 from omegaconf import DictConfig, OmegaConf
 from pytorch_lightning.utilities import rank_zero_only
 
-import dvc.api
-
 
 def get_logger(name=__name__) -> logging.Logger:
     """Initializes multi-GPU-friendly python command line logger."""
