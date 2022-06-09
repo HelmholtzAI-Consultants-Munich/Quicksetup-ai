@@ -15,18 +15,13 @@
 {{cookiecutter.project_short_description}}
 
 # Quickstart
-## Create the pipeline environment
-The libraries used by the pipeline are all listed in `requirements.txt`.
-* First, create a virtual environment (for the sake of the example, we'll call it `ml_template_env`).
+
+## Create the pipeline environment and install the {{cookiecutter.project_slug}} package
+Before using the template, one needs to install the project as a package.
+* First, create a virtual environment.
 > You can either do it with conda (preferred) or venv.
 * Then, activate the environment
-* Finally, install all dependencies using `pip`. Run:
-```
-pip install -r requirements.txt
- ```
-
-## Install the {{cookiecutter.project_slug}} package
-Before using the template, one needs to install the project as a package. Run:
+* Finally, install the project as a package. Run:
 ```
 pip install -e .
 ```
