@@ -66,8 +66,8 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 html_theme = "sphinx_book_theme"
-html_logo = "_static/dog.png"
-html_favicon = "_static/dog.png"
+html_logo = "_static/quicksetup_logo.png"
+html_favicon = "_static/quicksetup_logo.png"
 
 html_title = "MLPT"
 html_theme_options = {
