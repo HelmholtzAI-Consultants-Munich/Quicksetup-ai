@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# Machine Learning Pipeline Template
+# Quicksetup-ai: A flexible template as a quick setup for deep learning projects in research
 <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
 <a href="https://pytorchlightning.ai/"><img alt="Lightning" src="https://img.shields.io/badge/-Lightning-792ee5?logo=pytorchlightning&logoColor=white"></a>
 <a href="https://hydra.cc/"><img alt="Config: Hydra" src="https://img.shields.io/badge/Config-Hydra-89b8cd"></a>
@@ -11,9 +11,9 @@
 
 [Docs] | [Quickstart] | [Tutorials] |
 
-[Docs]: https://ml-pipeline-template.readthedocs.io/en/latest/
-[Quickstart]: https://ml-pipeline-template.readthedocs.io/en/latest/notes/getting_started/quickstart.html
-[Tutorials]: https://ml-pipeline-template.readthedocs.io/en/latest/index.html#:~:text=TUTORIALS-,How%20to%20set%20up%20a%20different%20model,-Define%20the%20new
+[Docs]: https://quicksetup-ai.readthedocs.io/
+[Quickstart]: https://quicksetup-ai.readthedocs.io/en/latest/notes/getting_started/quickstart.html
+[Tutorials]: https://quicksetup-ai.readthedocs.io/en/latest/index.html#:~:text=TUTORIALS-,How%20to%20set%20up%20a%20different%20model,-Define%20the%20new
 
 </div>
 
@@ -37,7 +37,7 @@ This template is a combination of [pyscaffold datascience](https://github.com/py
     ```
 3. Create your own project using this template via cookiecutter:
     ```bash
-    cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template.git
+    cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/Quicksetup-ai.git
     ```
    
 # Quickstart
@@ -102,7 +102,7 @@ sbatch job_submission.sbatch
 │   ├── test.py                             <- Run testing
 │   └── train.py                            <- Run training
 │
-├── src/ml_pipeline_template             <- Source code
+├── src/<your_project_name>              <- Source code
 │   ├── datamodules                             <- Lightning datamodules
 │   ├── models                                  <- Lightning models
 │   ├── utils                                   <- Utility scripts
