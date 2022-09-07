@@ -1,4 +1,4 @@
-ml\_pipeline\_template package
+quicksetup\_ai package
 ==============================
 
 Subpackages
@@ -7,25 +7,25 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   ml_pipeline_template.datamodules
-   ml_pipeline_template.models
-   ml_pipeline_template.utils
+   quicksetup_ai.datamodules
+   quicksetup_ai.models
+   quicksetup_ai.utils
 
 Submodules
 ----------
 
-ml\_pipeline\_template.testing\_pipeline module
+quicksetup\_ai.testing\_pipeline module
 -----------------------------------------------
 
-.. automodule:: ml_pipeline_template.testing_pipeline
+.. automodule:: quicksetup_ai.testing_pipeline
    :members:
    :undoc-members:
    :show-inheritance:
 
-ml\_pipeline\_template.training\_pipeline module
+quicksetup\_ai.training\_pipeline module
 ------------------------------------------------
 
-.. automodule:: ml_pipeline_template.training_pipeline
+.. automodule:: quicksetup_ai.training_pipeline
    :members:
    :undoc-members:
    :show-inheritance:
@@ -33,7 +33,7 @@ ml\_pipeline\_template.training\_pipeline module
 Module contents
 ---------------
 
-.. automodule:: ml_pipeline_template
+.. automodule:: quicksetup_ai
    :members:
    :undoc-members:
    :show-inheritance:

@@ -31,7 +31,7 @@
 │   ├── test.py                             <- Run testing
 │   └── train.py                            <- Run training
 │
-├── src/ml_pipeline_template             <- Source code
+├── src/<your_project_name >             <- Source code
 │   ├── datamodules                             <- Lightning datamodules
 │   ├── models                                  <- Lightning models
 │   ├── utils                                   <- Utility scripts

@@ -4,7 +4,7 @@
 ```bash
 conda create -n -y venv_cookie python=3.9 && conda activate venv_cookie
 pip install cookiecutter
-cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template.git
+cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/Quicksetup-ai.git
 ```
 
 
@@ -23,5 +23,5 @@ cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Templ
     ```
 3. Create your own project using this template via cookiecutter:
     ```bash
-    cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template.git
+    cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/Quicksetup-ai.git
     ```

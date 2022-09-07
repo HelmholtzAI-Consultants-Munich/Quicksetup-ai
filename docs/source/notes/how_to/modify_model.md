@@ -1,7 +1,7 @@
 # How to set up a different model
 In this Tutorial, we show how one can quickly edit the template to try a new architecture. In this example, we create a simple CNN architecture to classify MNIST images.
 ## Define the new architecture
-In `src/ml_pipeline_template/models/components`, we create a new file called `simple_cnn.py`. For simplicity, we adapt the code from [pytorch documentation](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html) to create a CNN.
+In `src/quicksetup_ai/models/components`, we create a new file called `simple_cnn.py`. For simplicity, we adapt the code from [pytorch documentation](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html) to create a CNN.
 
 ```
 import torch.nn as nn
@@ -41,12 +41,12 @@ class SimpleCNN(nn.Module):
 In `configs/model/`, we create a new file called `mnist_cnn.yaml` with the content of `mnist.yaml`. Then, we edit the `net` part by setting `_target_` to the new model, and providing the parameters we want for training. Here's the content of the new file.
 
 ```
-_target_: ml_pipeline_template.models.mnist_module.MNISTLitModule
+_target_: quicksetup_ai.models.mnist_module.MNISTLitModule
 lr: 0.001
 weight_decay: 0.0005
 
 net:
-  _target_: ml_pipeline_template.models.components.simple_cnn.SimpleCNN
+  _target_: quicksetup_ai.models.components.simple_cnn.SimpleCNN
 
   input_chans: 1
   conv1_out_chans: 6

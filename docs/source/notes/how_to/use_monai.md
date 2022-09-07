@@ -6,11 +6,11 @@ MedNIST classification using MONAI and MLPT
    ```bash
    pip install monai
    ```
-2. Create your own project using this template (MLPT) via cookiecutter
+2. Create your own project using this template via cookiecutter
 (skip if project has already been created via cookiecutter installation step):
    ```bash
    pip install cookiecutter
-   cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template.git
+   cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/Quicksetup-ai.git
    ```
 Check the [installation page](https://ml-pipeline-template.readthedocs.io/en/latest/notes/getting_started/installation.html) if you are having issues creating a project using this template via
 cookiecutter.
@@ -22,7 +22,7 @@ cookiecutter.
 1. To setup the data, we define two classes:
     - `ClassificationTaskDataModule` (inherit from `pytorch_lightning.LightningDataModule`)
     - `MedNISTDataset` (inherits from `torch.utils.data.Dataset`)
-    - We saved it as `ML-Pipeline-Template/src/ml_pipeline_template/datamodules/classification.py`
+    - We saved it as `Quicksetup-ai/src/quicksetup_ai/datamodules/classification.py`
 2. Below are the contents of this file containing the methods we need to define.
     - `prepare_data`
         - download MedNIST tar file and saved it under `data/MedNIST/raw`
@@ -33,7 +33,7 @@ cookiecutter.
 
 
 ```python
-# ML-Pipeline-Template/src/ml_pipeline_template/datamodules/classification.py file
+# Quicksetup-ai/src/quicksetup_ai/datamodules/classification.py file
 import numpy as np
 import pytorch_lightning as pl
 from sklearn import preprocessing
@@ -52,7 +52,7 @@ from monai.apps import download_url, extractall
 import os
 import glob
 
-from ml_pipeline_template import utils
+from quicksetup_ai import utils
 
 log = utils.get_logger(__name__)
 
@@ -152,13 +152,13 @@ class MedNISTDataset(Dataset):
 
 ## Setup the config for data
 1. This `yaml` file will be used to initialize `ClassificationTaskDataModule`.
-2. We create a `yaml` file under `.ML-Pipeline-Template/configs/datamodule/` and named it `mednist.yaml`
+2. We create a `yaml` file under `.Quicksetup-ai/configs/datamodule/` and named it `mednist.yaml`
 3. Below are the contents of the corresponding `yaml` file for the custom `ClassificationTaskDataModule`.
-   - File saved in `.ML-Pipeline-Template/configs/datamodule/mednist.yaml`
+   - File saved in `.Quicksetup-ai/configs/datamodule/mednist.yaml`
 
 ```yaml
-# ML-Pipeline-Template/configs/datamodule/mednist.yaml file
-_target_: ml_pipeline_template.datamodules.classification.ClassificationTaskDataModule
+# Quicksetup-ai/configs/datamodule/mednist.yaml file
+_target_: quicksetup_ai.datamodules.classification.ClassificationTaskDataModule
 
 # Any argument in the `ClassificationTaskDataModule` can be modified using this file
 data_dir: ${data_dir}
@@ -171,18 +171,18 @@ pin_memory: False
 ## Setup the model
 1. We will use the `DenseNet169` model from MONAI.
     - First, write your own class which inherits from `pytorch_lightning.LightningModule`
-    - Save it under `ML-Pipeline-Template/src/ml_pipeline_template/models/`.
-    - Below are the contents of the example file (`ML-Pipeline-Template/src/ml_pipeline_template/models/classification.py`) we will use in this tutorial.
+    - Save it under `Quicksetup-ai/src/quicksetup_ai/models/`.
+    - Below are the contents of the example file (`Quicksetup-ai/src/quicksetup_ai/models/classification.py`) we will use in this tutorial.
 
 ```python
-# ML-Pipeline-Template/src/ml_pipeline_template/models/classification.py file
+# Quicksetup-ai/src/quicksetup_ai/models/classification.py file
 from typing import Any
 
 import torch
 from pytorch_lightning import LightningModule
 from torchmetrics.classification.accuracy import Accuracy
 
-from ml_pipeline_template import utils
+from quicksetup_ai import utils
 
 log = utils.get_logger(__name__)
 
@@ -243,13 +243,13 @@ class ClassificationTaskModule(LightningModule):
 ```
 
 ## Setup the config for model
-1. We create a `yaml` file named `mednist.yaml` inside `.ML-Pipeline-Template/configs/datamodule/`
+1. We create a `yaml` file named `mednist.yaml` inside `.Quicksetup-ai/configs/datamodule/`
 2. Below are the contents of the corresponding `yaml` file for `ClassificationTaskModule`.
-    - Saved in `ML-Pipeline-Template/configs/datamodule/densenet.yaml`.
+    - Saved in `Quicksetup-ai/configs/datamodule/densenet.yaml`.
 
 ```yaml
-# ML-Pipeline-Template/configs/datamodule/densenet.yaml file
-_target_: ml_pipeline_template.models.custom_model.MedNISTModel
+# Quicksetup-ai/configs/datamodule/densenet.yaml file
+_target_: quicksetup_ai.models.custom_model.MedNISTModel
 
 lr: 0.001
 weight_decay: 0.0005

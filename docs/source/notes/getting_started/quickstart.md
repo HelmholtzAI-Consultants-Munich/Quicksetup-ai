@@ -1,8 +1,8 @@
 # Quickstart
 ## TL;DR
 ```bash
-# given that project_name is `ML-Pipeline-Template` via cookiecutter installation step
-cd ML-Pipeline-Template/
+# given that project_name is `Quicksetup-ai` via cookiecutter installation step
+cd Quicksetup-ai/
 conda create -n venv python=3.9
 conda activate venv
 pip install -r requirements.txt
@@ -11,7 +11,6 @@ python scripts/train.py
 ```
 
 ## Create the pipeline environment
-The libraries used by the pipeline are all listed in `requirements.txt`.
 * First, create a virtual environment (for the sake of the example, we'll call it `ml_template_env`).
 > You can either do it with conda (preferred) or venv.
 Using conda:
@@ -24,12 +23,7 @@ conda create -n venv python=3.9
 conda activate venv
 ```
 
-* Finally, install all dependencies using `pip`. Run:
-```bash
-pip install -r requirements.txt
- ```
-
-## Install the ml-pipeline-template package
+## Install the quicksetup-ai package
 Before using the template, one needs to install the project as a package. Run:
 ```bash
 pip install -e .

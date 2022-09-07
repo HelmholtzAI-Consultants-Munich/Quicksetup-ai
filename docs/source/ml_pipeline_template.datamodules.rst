@@ -1,4 +1,4 @@
-ml\_pipeline\_template.datamodules package
+quicksetup\_ai.datamodules package
 ==========================================
 
 Subpackages
@@ -7,15 +7,15 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   ml_pipeline_template.datamodules.components
+   quicksetup_ai.datamodules.components
 
 Submodules
 ----------
 
-ml\_pipeline\_template.datamodules.mnist\_datamodule module
+quicksetup\_ai.datamodules.mnist\_datamodule module
 -----------------------------------------------------------
 
-.. automodule:: ml_pipeline_template.datamodules.mnist_datamodule
+.. automodule:: quicksetup_ai.datamodules.mnist_datamodule
    :members:
    :undoc-members:
    :show-inheritance:
@@ -23,7 +23,7 @@ ml\_pipeline\_template.datamodules.mnist\_datamodule module
 Module contents
 ---------------
 
-.. automodule:: ml_pipeline_template.datamodules
+.. automodule:: quicksetup_ai.datamodules
    :members:
    :undoc-members:
    :show-inheritance:

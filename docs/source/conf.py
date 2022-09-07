@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.abspath(p))
 
 # -- Project information -----------------------------------------------------
 
-project = "ML-Pipeline-Template"
+project = "Quicksetup-ai"
 copyright = "HAICU-HMGU 2022"
 author = "HAICU-HMGU"
 
@@ -69,10 +69,10 @@ html_theme = "sphinx_book_theme"
 html_logo = "_static/quicksetup_logo.png"
 html_favicon = "_static/quicksetup_logo.png"
 
-html_title = "MLPT"
+html_title = "Quicksetup-ai"
 html_theme_options = {
     "logo_only": False,
-    "repository_url": "https://github.com/HelmholtzAI-Consultants-Munich/ML-Pipeline-Template",
+    "repository_url": "https://github.com/HelmholtzAI-Consultants-Munich/Quicksetup-ai",
     "use_repository_button": True,
     "use_fullscreen_button": True,
     "use_issues_button": True,

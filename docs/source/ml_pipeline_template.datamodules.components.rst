@@ -1,10 +1,10 @@
-ml\_pipeline\_template.datamodules.components package
+quicksetup\_ai.datamodules.components package
 =====================================================
 
 Module contents
 ---------------
 
-.. automodule:: ml_pipeline_template.datamodules.components
+.. automodule:: quicksetup_ai.datamodules.components
    :members:
    :undoc-members:
    :show-inheritance:

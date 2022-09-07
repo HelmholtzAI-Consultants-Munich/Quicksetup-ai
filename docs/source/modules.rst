@@ -1,7 +1,7 @@
-ml_pipeline_template
+quicksetup_ai
 ====================
 
 .. toctree::
    :maxdepth: 4
 
-   ml_pipeline_template
+   quicksetup_ai
