@@ -43,7 +43,7 @@ This template is a combination of [pyscaffold datascience](https://github.com/py
 # Quickstart
 ## Create the pipeline environment and install the ml-pipeline-template package
 Before using the template, one needs to install the project as a package.
-* First, create a virtual environment (for the sake of the example, we'll call it `ml_template_env`). 
+* First, create a virtual environment. 
 > You can either do it with conda (preferred) or venv.
 * Then, activate the environment
 * Finally, install the project as a package. Run:
