@@ -3,24 +3,23 @@
 ```bash
 # given that project_name is `Quicksetup-ai` via cookiecutter installation step
 cd Quicksetup-ai/
-conda create -n venv python=3.9
-conda activate venv
-pip install -r requirements.txt
+conda create -n quicksetup_ai_env python=3.9
+conda activate quicksetup_ai_env
 pip install -e .
 python scripts/train.py
 ```
 
 ## Create the pipeline environment
-* First, create a virtual environment (for the sake of the example, we'll call it `ml_template_env`).
+* First, create a virtual environment (for the sake of the example, we'll call it `quicksetup_ai_env`).
 > You can either do it with conda (preferred) or venv.
 Using conda:
 ```bash
-conda create -n venv python=3.9
+conda create -n quicksetup_ai_env python=3.9
 ```
 
 * Then, activate the environment
 ```bash
-conda activate venv
+conda activate quicksetup_ai_env
 ```
 
 ## Install the quicksetup-ai package

@@ -71,7 +71,7 @@ html_favicon = "_static/quicksetup_logo.png"
 
 html_title = "Quicksetup-ai"
 html_theme_options = {
-    "logo_only": False,
+    "logo_only": True,
     "repository_url": "https://github.com/HelmholtzAI-Consultants-Munich/Quicksetup-ai",
     "use_repository_button": True,
     "use_fullscreen_button": True,

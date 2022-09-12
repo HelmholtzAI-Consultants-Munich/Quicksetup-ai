@@ -118,7 +118,6 @@ sbatch job_submission.sbatch
 ├── .coveragerc                          <- Configuration for coverage reports of unit tests.
 ├── .gitignore                           <- List of files/folders ignored by git
 ├── .pre-commit-config.yaml              <- Configuration of pre-commit hooks for code formatting
-├── requirements.txt                     <- File for installing python dependencies
 ├── setup.cfg                            <- Configuration of linters and pytest
 ├── LICENSE.txt                          <- License as chosen on the command-line.
 ├── pyproject.toml                       <- Build configuration. Don't change! Use `pip install -e .`
