@@ -4,7 +4,7 @@ MedNIST classification using MONAI and MLPT
 ## MONAI and MLPT
 1. Install [MONAI](https://docs.monai.io/en/stable/installation.html) in your environment:
    ```bash
-   pip install monai
+   pip install monai sklearn
    ```
 2. Create your own project using this template via cookiecutter
 (skip if project has already been created via cookiecutter installation step):
