@@ -24,5 +24,7 @@ Quicksetup-ai documentation!
 
    notes/how_to/modify_model.md
    notes/how_to/modify_data.md
-   notes/how_to/use_monai.ipynb
+   notes/how_to/use_monai.mf
+   notes/how_to/use_dvc.md
+   notes/how_to/tune_hyperparams.md
 
