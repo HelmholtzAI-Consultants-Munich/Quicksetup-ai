@@ -1,22 +1,16 @@
-# MedNIST classification
-MedNIST classification using MONAI and MLPT
+# MONAI MedNIST classification
+MedNIST classification using MONAI and Quicksetup-ai:
+- `MedNIST` dataset and `DenseNet169` model from MONAI
 
-## MONAI and MLPT
-1. Install [MONAI](https://docs.monai.io/en/stable/installation.html) in your environment:
+
+## MONAI and Quicksetup-ai
+1. Given that you've already followed the [Installation](https://quicksetup-ai.readthedocs.io/en/latest/notes/getting_started/installation.html#) 
+and [Quickstart](https://quicksetup-ai.readthedocs.io/en/latest/notes/getting_started/quickstart.html) in the `Getting Started` section.
+
+- Install [MONAI](https://docs.monai.io/en/stable/installation.html) in your environment:
    ```bash
    pip install monai sklearn
    ```
-2. Create your own project using this template via cookiecutter
-(skip if project has already been created via cookiecutter installation step):
-   ```bash
-   pip install cookiecutter
-   cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/Quicksetup-ai.git
-   ```
-Check the [installation page](https://ml-pipeline-template.readthedocs.io/en/latest/notes/getting_started/installation.html) if you are having issues creating a project using this template via
-cookiecutter.
-
-
-
 
 ## Setup the data
 1. To setup the data, we define two classes:

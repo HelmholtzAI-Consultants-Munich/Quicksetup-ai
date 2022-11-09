@@ -22,9 +22,5 @@ Quicksetup-ai documentation!
    :maxdepth: 1
    :caption: TUTORIALS
 
-   notes/how_to/modify_model.md
-   notes/how_to/modify_data.md
-   notes/how_to/use_monai.mf
-   notes/how_to/use_dvc.md
-   notes/how_to/tune_hyperparams.md
-
+   notes/quicksetup_ai_101/index.md
+   notes/use_cases/index.md

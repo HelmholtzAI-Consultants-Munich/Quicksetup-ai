@@ -1,20 +1,16 @@
 
-## Steps to build your documentation
+## Steps to build Quicksetup-ai documentation
 
 1. Build and install your package from source.
 ```bash
-cd ./ML-Pipeline-Template/
-pip install -e .
-pip install sphinx sphinx_rtd_theme
+git clone https://github.com/HelmholtzAI-Consultants-Munich/Quicksetup-ai
+cd Quicksetup-ai/
+pip install -r docs/requirements.txt
 ```
 
-2. Generate documentation from your docstrings.
-```bash
-cd docs/
-sphinx-apidoc -f -o ./source ../src/ml_pipeline_template
-```
-3. Build the documentation
+2. Build the documentation
 ```bash
 make clean && make html
 ```
-4. You can now view your documentation under `docs/build/html/index.html`.
+
+3. You can now view your documentation under `docs/build/html/index.html`.

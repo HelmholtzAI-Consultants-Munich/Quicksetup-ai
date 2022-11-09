@@ -1,6 +1,6 @@
 # Installation
 
-### TL;DR:
+### TL;DR
 ```bash
 conda create -y -n venv_cookie python=3.9 && conda activate venv_cookie
 pip install cookiecutter
