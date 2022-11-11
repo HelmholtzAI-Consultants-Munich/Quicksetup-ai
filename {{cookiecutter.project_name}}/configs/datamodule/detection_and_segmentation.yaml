@@ -1,0 +1,7 @@
+_target_: {{cookiecutter.project_slug}}.datamodules.detection_and_segmentation.DetectionAndSegmentationDataModule
+
+data_dir: ${data_dir}
+batch_size: 4
+num_workers: 0
+pin_memory: False
+num_class: 2

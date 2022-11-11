@@ -8,5 +8,6 @@
   "version": "0.1.0",
   "open_source_license": ["MIT", "BSD-3", "GNU GPL v3.0", "Apache Software License 2.0"],
   "default_logger": ["mlflow", "tensorboard", "wandb", "csv", "neptune", "comet"],
-  "use_dvc": ["yes", "no"]
+  "use_dvc": ["yes", "no"],
+  "include_detection_segmentation_modules": ["yes", "no"]
 }
