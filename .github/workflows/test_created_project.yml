@@ -15,4 +15,4 @@ jobs:
     - name: Run and test project
       run: |
         pip install cookiecutter dvc
-        yes | cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/Quicksetup-ai.git --replay
+        echo -ne "\n" | cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/Quicksetup-ai.git
