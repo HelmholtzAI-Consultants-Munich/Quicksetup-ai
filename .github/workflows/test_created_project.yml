@@ -14,5 +14,4 @@ jobs:
         python-version: 3.9
     - name: Run and test project
       run: |
-        pip install cookiecutter dvc
-        cookiecutter https://github.com/HelmholtzAI-Consultants-Munich/Quicksetup-ai.git --no-input
+        bash quicksetup_test.sh
