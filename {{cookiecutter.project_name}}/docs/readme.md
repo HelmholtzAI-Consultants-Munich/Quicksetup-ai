@@ -5,7 +5,7 @@
 ```bash
 cd ./{{cookiecutter.project_name}}/
 pip install -e .
-pip install sphinx sphinx_rtd_theme
+pip install sphinx sphinx_rtd_theme sphinx_copybutton
 ```
 
 2. Generate documentation from your docstrings.

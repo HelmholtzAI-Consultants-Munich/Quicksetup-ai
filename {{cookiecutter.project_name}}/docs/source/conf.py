@@ -40,7 +40,7 @@ extensions = [
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
     # "myst_parser",
-    "myst_nb",
+    # "myst_nb",
     "sphinx_copybutton",
 ]
 

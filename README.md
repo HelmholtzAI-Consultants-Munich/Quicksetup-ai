@@ -34,7 +34,7 @@ This template is a combination of [pyscaffold datascience](https://github.com/py
 
 2. Install cookiecutter in your environment:
     ```bash
-    pip install cookiecutter
+    pip install cookiecutter dvc
     ```
 3. Create your own project using this template via cookiecutter:
     ```bash
