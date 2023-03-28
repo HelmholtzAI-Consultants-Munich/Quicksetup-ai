@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.abspath(p))
 # -- Project information -----------------------------------------------------
 
 project = "{{cookiecutter.project_name}}"
-copyright = "{{cookiecutter.author_name}} 2022"
+copyright = "{{cookiecutter.author_name}} {% now 'utc', '%Y' %}"
 author = "{{cookiecutter.author_name}}"
 
 # The full version, including alpha/beta/rc tags
