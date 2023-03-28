@@ -10,14 +10,14 @@ A couple of sanity checks to make sure the model doesn't crash with different ru
 
 def test_fast_dev_run():
     """Test running for 1 train, val and test batch."""
-    command = ["train.py", "++trainer.fast_dev_run=true"]
+    command = ["scripts/train.py", "++trainer.fast_dev_run=true"]
     run_command(command)
 
 
 @pytest.mark.slow
 def test_cpu():
     """Test running 1 epoch on CPU."""
-    command = ["train.py", "++trainer.max_epochs=1", "++trainer.gpus=0"]
+    command = ["scripts/train.py", "++trainer.max_epochs=1", "++trainer.gpus=0"]
     run_command(command)
 
 
@@ -27,7 +27,7 @@ def test_cpu():
 def test_gpu():
     """Test running 1 epoch on GPU."""
     command = [
-        "train.py",
+        "scripts/train.py",
         "++trainer.max_epochs=1",
         "++trainer.gpus=1",
     ]
@@ -39,7 +39,7 @@ def test_gpu():
 def test_mixed_precision():
     """Test running 1 epoch with pytorch native automatic mixed precision (AMP)."""
     command = [
-        "train.py",
+        "scripts/train.py",
         "++trainer.max_epochs=1",
         "++trainer.gpus=1",
         "++trainer.precision=16",
@@ -51,7 +51,7 @@ def test_mixed_precision():
 def test_double_validation_loop():
     """Test running 1 epoch with validation loop twice per epoch."""
     command = [
-        "train.py",
+        "scripts/train.py",
         "++trainer.max_epochs=1",
         "++trainer.val_check_interval=0.5",
     ]
