@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.abspath(p))
 # -- Project information -----------------------------------------------------
 
 project = "Quicksetup-ai"
-copyright = "Helmholtz AI" + today.year
+copyright = "Helmholtz AI" + today.strftime("%Y")
 author = "Helmholtz AI"
 
 # The full version, including alpha/beta/rc tags
