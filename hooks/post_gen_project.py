@@ -16,7 +16,7 @@ def git_commit():
     print("Staging files")
     subprocess.run(["git", "add", "-A"])
     print("Committing files")
-    subprocess.run(["git", "commit", "-aqm", "buid: add initial files"])
+    subprocess.run(["git", "commit", "-aqm", "build: add initial files"])
     subprocess.run(["git", "branch", "-m", "main"])
 
 
