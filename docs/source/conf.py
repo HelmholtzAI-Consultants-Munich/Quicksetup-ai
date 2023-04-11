@@ -12,7 +12,9 @@
 #
 import os
 import sys
+import datetime
 
+today = datetime.datetime.now()
 # sys.path.insert(0, os.path.abspath('.'))
 from pathlib import Path
 
@@ -23,8 +25,8 @@ sys.path.insert(0, os.path.abspath(p))
 # -- Project information -----------------------------------------------------
 
 project = "Quicksetup-ai"
-copyright = "HAICU-HMGU 2022"
-author = "HAICU-HMGU"
+copyright = "Helmholtz AI" + today.year
+author = "Helmholtz AI"
 
 # The full version, including alpha/beta/rc tags
 release = "0.1"
