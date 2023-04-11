@@ -10,7 +10,7 @@
 #SBATCH -t 00:30:00
 #SBATCH --nice=10000
 
-source $HOME/.bashrc
+source "$HOME"/.bashrc
 echo 'Starting script'
 
 conda activate ml_template_env
