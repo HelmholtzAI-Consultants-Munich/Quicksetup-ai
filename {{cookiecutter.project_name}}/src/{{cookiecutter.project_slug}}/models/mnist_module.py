@@ -48,6 +48,10 @@ class MNISTLitModule(LightningModule):
         # for logging best so far validation accuracy
         self.val_acc_best = MaxMetric()
 
+        self.training_step_outputs = []
+        self.validation_step_outputs = []
+        self.test_step_outputs = []
+
     def forward(self, x: torch.Tensor):
         return self.net(x)
 
@@ -60,7 +64,7 @@ class MNISTLitModule(LightningModule):
 
     def training_step(self, batch: Any, batch_idx: int):
         loss, preds, targets = self.step(batch)
-
+        self.training_step_outputs.append({"loss": loss, "preds": preds, "targets": targets}) # Update in Pl - V2.0.1
         # log train metrics
         acc = self.train_acc(preds, targets)
         self.log("train/loss", loss, on_step=False, on_epoch=True, prog_bar=False)
@@ -71,12 +75,17 @@ class MNISTLitModule(LightningModule):
         # remember to always return loss from `training_step()` or else backpropagation will fail!
         return {"loss": loss, "preds": preds, "targets": targets}
 
-    def training_epoch_end(self, outputs: List[Any]):
-        # `outputs` is a list of dicts returned from `training_step()`
+    def on_training_epoch_end(self):
+        # `self.training_step_outputs` is a list of dicts saved in training step and can be used accordingly in this method - Update in Pl - V2.0.1 (https://github.com/Lightning-AI/lightning/pull/16520)
+        """
+        Example:
+        epoch_loss_average = torch.stack([output["loss"] for output in self.training_step_outputs]).mean()
+        """
         pass
 
     def validation_step(self, batch: Any, batch_idx: int):
         loss, preds, targets = self.step(batch)
+        self.validation_step_outputs.append({"loss": loss, "preds": preds, "targets": targets}) # Update in Pl - V2.0.1
 
         # log val metrics
         acc = self.val_acc(preds, targets)
@@ -85,13 +94,19 @@ class MNISTLitModule(LightningModule):
 
         return {"loss": loss, "preds": preds, "targets": targets}
 
-    def validation_epoch_end(self, outputs: List[Any]):
+    def on_validation_epoch_end(self):
+        # `self.validation_step_outputs` is a list of dicts saved in validation step and can be used accordingly in this method - Update in Pl - V2.0.1 (https://github.com/Lightning-AI/lightning/pull/16520)
+        """
+        Example:
+        epoch_loss_average = torch.stack([output["loss"] for output in self.validation_step_outputs]).mean()
+        """
         acc = self.val_acc.compute()  # get val accuracy from current epoch
         self.val_acc_best.update(acc)
         self.log("val/acc_best", self.val_acc_best.compute(), on_epoch=True, prog_bar=True)
 
     def test_step(self, batch: Any, batch_idx: int):
         loss, preds, targets = self.step(batch)
+        self.test_step_outputs.append({"loss": loss, "preds": preds, "targets": targets}) # Update in Pl - V2.0.1
 
         # log test metrics
         acc = self.test_acc(preds, targets)
@@ -100,7 +115,12 @@ class MNISTLitModule(LightningModule):
 
         return {"loss": loss, "preds": preds, "targets": targets}
 
-    def test_epoch_end(self, outputs: List[Any]):
+    def on_test_epoch_end(self):
+         # `self.test_step_outputs` is a list of dicts saved in test step and can be used accordingly in this method - Update in Pl - V2.0.1 (https://github.com/Lightning-AI/lightning/pull/16520)
+        """
+        Example:
+        epoch_loss_average = torch.stack([output["loss"] for output in self.test_step_outputs]).mean()
+        """
         pass
 
     def on_epoch_end(self):

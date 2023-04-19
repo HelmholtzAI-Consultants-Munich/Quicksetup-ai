@@ -108,7 +108,7 @@ def log_hyperparameters(
     datamodule: pl.LightningDataModule,
     trainer: pl.Trainer,
     callbacks: List[pl.Callback],
-    logger: List[pl.loggers.LightningLoggerBase],
+    logger: List[pl.loggers.Logger],
 ) -> None:
     """Controls which config parts are saved by Lightning loggers.
 
@@ -139,7 +139,7 @@ def log_hyperparameters(
         hparams["callbacks"] = config["callbacks"]
     
 
-    if "{{cookiecutter.use_dvc}}" == "yes":
+    if "no" == "yes":
         # hparams["data_dir"] = config["data_dir"]
         # hparams["data_repo"] = config["data_repo"]
         # hparams["data_version"] = config["data_version"]
@@ -157,7 +157,7 @@ def finish(
     datamodule: pl.LightningDataModule,
     trainer: pl.Trainer,
     callbacks: List[pl.Callback],
-    logger: List[pl.loggers.LightningLoggerBase],
+    logger: List[pl.loggers.Logger],
 ) -> None:
     """Makes sure everything closed properly."""
 

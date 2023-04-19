@@ -1,6 +1,8 @@
 _target_: pytorch_lightning.Trainer
 
-gpus: 0
+accelerator: "cpu" 
+# accelerator: "gpu" 
+# devices: 0 - Comment when using cpu and specify a number when using GPU
 
 min_epochs: 100
 max_epochs: 150
@@ -9,4 +11,5 @@ max_epochs: 150
 # num_sanity_val_steps: 0
 
 # ckpt path
-resume_from_checkpoint: null
+# resume_from_checkpoint: null
+
