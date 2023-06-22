@@ -1,4 +1,5 @@
 import subprocess
+import os
 
 
 def git_init():
@@ -21,7 +22,10 @@ def git_commit():
 
 
 def delete_license_dir():
-    subprocess.run(["rm", "-r", "licenses/"])
+    if os.name == 'nt':
+        subprocess.run(["rd", "/s", "/q", "licenses/"])
+    else:
+        subprocess.run(["rm", "-r", "licenses/"])
 
 
 if __name__ == "__main__":
