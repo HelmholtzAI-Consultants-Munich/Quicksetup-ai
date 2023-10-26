@@ -1,5 +1,4 @@
 
-
 <div align="center">
 
 # Quicksetup-ai: A flexible template as a quick setup for deep learning projects in research
@@ -128,4 +127,14 @@ sbatch job_submission.sbatch
 ├── setup.py                             <- [DEPRECATED] Use `python setup.py develop` to install for
 │                                           development or `python setup.py bdist_wheel` to build.
 └── README.md
+```
+# How to cite
+```
+@misc{author_year,
+  author       = {Isra Mekki, Gerome Vivar, Harshavardhan Subramanian, Erinc Merdivan},
+  title        = {Quicksetup-ai},
+  year         = {2022},
+  doi          = {10.5281/zenodo.10044608},
+  url          = {https://github.com/HelmholtzAI-Consultants-Munich/Quicksetup-ai},
+}
 ```
